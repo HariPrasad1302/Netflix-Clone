@@ -2,7 +2,7 @@ import React from 'react';
 
 interface InputProps{
     id: string;
-    onchange: any;
+    onChange: any;
     value: string;
     label: string;
     type?: string;
@@ -10,7 +10,7 @@ interface InputProps{
 
 const Input: React.FC<InputProps> = ({
     id,
-    onchange,
+    onChange,
     value,
     label,
     type
@@ -18,6 +18,8 @@ const Input: React.FC<InputProps> = ({
     return(
         <div className="relative">
             <input 
+            onChange={onChange}
+            type={type}
             value={value}
             id={id}
             className="
@@ -56,7 +58,7 @@ const Input: React.FC<InputProps> = ({
             peer-focus:-translate-y-3
             "
             htmlFor={id}>
-                Email
+                {label}
             </label>
         </div>
     )
